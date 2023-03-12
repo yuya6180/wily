@@ -1,0 +1,537 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.head{
+    background-color: black;
+    display: flex;
+}
+.head ul li{
+    opacity: 0;
+}
+
+
+@media screen and (min-width: 1440px){
+  .head{
+    height: 80px;
+  }
+  .head ul li{
+    opacity: 1;
+    display: flex;
+  }
+  .navi-sec ul {
+    display: flex;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .navi-sec ul li{
+    width: 80px;
+    color: wheat;
+    padding: 20px 10px;
+    margin-top: -10px;
+    width: 160px;
+    text-align: center;
+    margin-right: 20px;
+    justify-content: center;
+    letter-spacing: 4px
+  }
+  .navi-sec ul a:hover{
+    opacity: .6;
+    transition: .3s;
+  }
+  .navi-sec ul a{
+    text-decoration: none;
+  }
+  .head h1 a{
+    font-size: 40px;
+    width: 500px;
+    margin-right: 60px;
+  }
+  .hamburger{
+    display: none;
+  }
+}
+.head h1{
+    padding: 20px 10px 10px;
+    font-size: 40px;
+    color: wheat;
+    letter-spacing: 6px;
+    margin-left: 100px;
+}
+.head h1 a:hover{
+    opacity: .6;
+    transition: .3s; 
+}
+.head h1 a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* 
+hamburger(ハンバーガーアイコン)
+=================================== */
+.hamburger {
+  position: absolute;
+  right: 20px;
+  top: 24px;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.hamburger__line {
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  right: 0;
+  background-color: #000;
+  transition: all 0.5s;
+}
+
+.hamburger__line--1 {
+  top: -5px;
+  background: wheat;
+}
+
+.hamburger__line--2 {
+  top: 10px;
+  height: 3px;
+  background: white;
+}
+
+.hamburger__line--3 {
+  top: 24px;
+  background: wheat;
+}
+  
+  /*ハンバーガーがクリックされたら*/
+  .open .hamburger__line--1 {
+    transform: rotate(-45deg);
+    top: 11px;
+  }
+  
+  .open .hamburger__line--2 {
+    opacity: 0;
+  }
+  
+  .open .hamburger__line--3 {
+    transform: rotate(45deg);
+    top: 11px;
+  }
+  
+  /* 
+  sp-nav(ナビ)
+  =================================== */
+  .sp-nav {
+    position: fixed;
+    right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
+    top: 0;
+    width: 70%; /* 出てくるスライドメニューの幅 */
+    height: 100vh;
+    background-color: black;
+    transition: all 1.0s;
+    z-index: 200;
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+    opacity: 1;
+  }
+
+  .sp-nav ul{
+      margin-top: 100px;
+  }
+  .sp-nav a{
+      text-decoration: none
+  }
+  .sp-nav ul li{
+      font-size: 28px;
+      margin-top: 20px;
+      text-align: center;
+      color: wheat;
+      opacity: 1;
+      margin-top: 50px; 
+      z-index: 10; 
+      letter-spacing: 4px;
+      font-weight: 600;
+  }
+  
+  /*ハンバーガーがクリックされたら右からスライド*/
+  .open .sp-nav {
+    right: 0;
+  }
+  
+  /* 
+  black-bg(ハンバーガーメニュー解除用bg)
+  =================================== */
+  .black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1.0s;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  /*ハンバーガーメニューが開いたら表示*/
+  .open .black-bg {
+    opacity: 0.5;
+    visibility: visible;
+  }
+
+/* -------------main-------------- */
+
+main {
+    padding-top: 60px;
+    background-color: rgb(44, 44, 44);
+}
+
+/* ----------section1---------------- */
+
+.main-head h2{
+    font-size: 52px;
+    margin-left: 8%;
+    letter-spacing: 4px;
+    line-height: 70px;
+    color: wheat;
+    position: absolute;
+    top: 90px;
+}
+.main-head h3{
+    font-size: 20px;
+    margin-left: 8%;
+    letter-spacing: 6px;
+    margin-top: 30px;
+    color: wheat;
+    position: absolute;
+    top: 280px;
+}
+.main-head img{
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    opacity: .5;
+    display: block;
+    opacity: .4;
+}
+.black-cover{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 60px;
+}
+
+@media screen and (min-width: 481px){
+    .main-head h2{
+        font-size: 200px;
+        line-height: 140px;
+        letter-spacing: 15px;
+        top: 180px;
+        left: 3%;
+    }
+    .main-head h3{
+        margin-top: 170px;
+        font-size: 60px;
+        right: 10%;
+    }
+    .main-head img{
+        height: 600px;
+    }
+}
+
+.hair-model img{
+    width: 80%;
+    display: block;
+    margin: 70px auto;
+}
+
+/* ------------------section2---------------- */
+
+.about-us{
+    margin-top: 70px;
+}
+.about-us-h2{
+    color: #fff;
+    font-size: 38px;
+    margin-left: 4%;
+    letter-spacing: 6px;
+    border-bottom: firebrick 3px solid;
+    width: 90%;
+}
+.contain{
+    margin-top: 60px;
+}
+.about-us h3{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin: 30px auto;
+    letter-spacing: 4px;
+    border-bottom: firebrick 2px solid;
+    width: 80%;
+}
+.about-us img{
+    width: 80%;
+    display: block;
+    margin: 30px auto;
+}
+.about-us p{
+    width: 80%;
+    font-size: 16px;
+    color: #fff;
+    line-height: 26px;
+    margin: 0 auto;
+}
+@media screen and (min-width: 481px){
+    .about-us-h2{
+        font-size: 80px;
+        width: 80%;
+        margin: 120px auto 30px;
+        letter-spacing: 10px;
+    }
+    .about-us{
+        width: 400px;
+    }
+    .about-us h3{
+        font-size: 22px;
+    }
+    .about-us p{
+        font-size: 18px;
+        line-height: 32px;
+    }
+    .sec-2{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 0 auto;
+    }
+}
+
+/* -----------section3-------------- */
+
+.message{
+    margin: 80px auto;
+    color: #fff;
+}
+.message h2{
+    font-size: 24px;
+    color: #000;
+    background-color: rgb(199, 199, 199);
+    width: 140px;
+    margin: 30px auto;
+    padding: 2px;
+    text-align: center;
+}
+.message img{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+.message p{
+    width: 90%;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 40px auto;
+}
+
+@media screen and (min-width: 481px){
+    .message{
+        width: 80%;
+    }
+    .message h2{
+        font-size: 40px;
+        width: 260px;
+        margin-top: 100px;
+    }
+    .message-logo{
+        display: flex;
+        margin: 80px auto;
+    }
+    .message p{
+        font-size: 18px;
+        line-height: 32px;
+        margin-top: -10px;
+    }
+}
+
+/* ------------section4---------- */
+
+.conpany{
+    color: #fff;
+}
+.conpany h2{
+    font-size: 24px;
+    color: #000;
+    background-color: rgb(199, 199, 199);
+    width: 140px;
+    margin: 30px auto 0;
+    padding: 2px;
+    text-align: center;
+}
+.conpany ul{
+    width: 90%;
+    margin: 0 auto;
+}
+.conpany ul li{
+    padding: 10px;
+    list-style: none;
+    font-size: 16px;
+    border-bottom: #fff 1px solid;
+}
+.conpany ul li:nth-child(even){
+    background-color: rgb(51, 51, 51);
+    line-height: 22px;
+    font-size: 14px;
+}
+
+@media screen and (min-width: 481px){
+    .conpany{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .conpany ul li{
+        padding: 20px;
+    }
+    .conpany h2{
+        font-size: 40px;
+        width: 260px;
+        margin-top: 100px;
+    }
+}
+
+/* ---------section5--------- */
+
+.contact{
+    margin: 80px auto 0;
+    color: #fff;
+}
+.contact img{
+    width: 100%;
+    opacity: .5;
+}
+.contact-text{
+    transform: translateY(-250px);
+    font-size: 14px;
+    text-align: center;
+    line-height: 26px;
+}
+.contact-text h3{
+    font-size: 18px;
+    padding: 15px;
+    letter-spacing: 2px;
+}
+.botan p{
+    padding: 5px;
+    background-color: rgba(178, 34, 34, 0.49);
+    border-radius: 20px;
+    width: 220px;
+    text-align: center;
+    margin: 10px auto 0;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+}
+
+@media screen and (min-width: 481px){
+    .contact img{
+        height: 520px;
+        background-position: center;
+        background-size: cover;
+    }
+    .contact-text{
+        transform: translateY(-420px);
+    }
+    .contact-text h3{
+        font-size: 28px;
+        padding-bottom: 40px;
+        letter-spacing: 4px;
+    }
+    .contact-text p{
+        font-size: 18px;
+        line-height: 38px;
+        letter-spacing: 2px;
+    }
+    .botan p{
+        width: 340px;
+        padding: 8px;
+        letter-spacing: 2px;
+        margin-top: 40px;
+        cursor: pointer;
+        color: #fff;
+    }
+    .botan:hover{
+        opacity: .8;
+        transition: .3s;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+
+/* --------footer-------- */
+
+footer ul{
+    margin: -120px auto;
+    background-color: rgb(0, 0, 0);
+    color: wheat;
+    padding: 50px 0 80px;
+    border-top: #fff 2px solid;
+}
+footer ul li{
+    width: 80%;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    letter-spacing: 4px;
+    border-bottom: firebrick 2px solid;
+    margin: 0 auto;
+    list-style: none;
+}
+
+@media screen and (min-width: 481px){
+    footer ul li{
+        font-size: 18px;
+        padding: 24px;
+        letter-spacing: 8px;
+        width: 60%;
+    }
+    footer ul li:hover{
+        opacity: .6;
+        transition: .3s;
+        cursor: pointer;
+    }
+}
+
+
+
+/* -------------API--------------- */
+
+span {
+    display: block;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity .4s, transform .4s;
+  }
+  
+  span.appear{
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
